@@ -1,0 +1,132 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Earthquake Building Damage Prediction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'earthquake/vendor/aos/aos.css'%}" rel="stylesheet">
+  <link href="{% static 'earthquake/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'earthquake/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'earthquake/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'earthquake/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'earthquake/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'earthquake/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'earthquake/css/style.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'earthquake/css/dami.css' %}">
+  <link rel="stylesheet" href="{% static 'earthquake/css/professional.css' %}">
+ 
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Team 404</a></h1>
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="{% url 'homepage' %}">Home</a></li>
+          <!-- <li><a class="nav-link scrollto" href="{% url 'homepage'  %}">About Project</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <div id="wrap" class="input">
+    <header class="input-header">
+      <h1>Normal User</h1>
+    </header>
+    <form action="{% url 'addnormalUserData' %}" method="POST">
+
+      {% csrf_token %}
+    <section class="input-content">
+      <h2><i>Enter Details<span>All Mandatory</span></i></h2>
+      <div class="input-content-wrap">
+        <dl class="inputbox">
+          <dt class="inputbox-title">Building ID</dt>
+          <dd class="inputbox-content">
+            <input id="input0" type="number" name="building_id" required/>
+            <label for="input0">Eg:10320216232</label>
+            <span class="underline"></span>
+          </dd>
+        </dl>
+        <dl class="inputbox">
+          <dt class="inputbox-title">District ID</dt>
+          <dd class="inputbox-content">
+            <input id="input1" type="number" name="district_id" required/>
+            <label for="input1">Eg: 12</label>
+            <span class="underline"></span>
+          </dd>
+        </dl>
+        <dl class="inputbox">
+          <dt class="inputbox-title">VDC/Municipality</dt>
+          <dd class="inputbox-content">
+            <input id="input2" type="number" name="vdcmun_id" required/>
+            <label for="input2">Eg: 1236</label>
+            <span class="underline"></span>
+          </dd>
+        </dl>
+        
+        <dl class="inputbox">
+          <dt class="inputbox-title"> Ward Number</dt>
+          <dd class="inputbox-content">
+            <input id="input3" type="number" name="ward_id" required/>
+            <label for="input3">Eg:6</label>
+            <span class="underline"></span>
+          </dd>
+        </dl>
+        
+        <div class="btns">
+            <input type="submit" value="Submit" class="btn btn-confirm">
+        </div>
+      </div>
+    </section>
+  </form>
+  </div>
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Team 404</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by Designed by Members of Team 404
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'earthquake/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'earthquake/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'earthquake/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'earthquake/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'earthquake/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'earthquake/vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <!-- Template Main JS File -->
+  <script src="{% static 'earthquake/js/main.js' %}"></script>
+
+</body>
+
+</html>
