@@ -11,11 +11,10 @@ from sklearn.preprocessing import LabelEncoder
 # Global Variables
 
 # model path
-model_path = 'earthquake\packages\model_tuned.pkl'
+model_path = 'earthquake/packages/model_tuned.pkl'
 
 
-# Load pickle model
-forest_best = pickle.load(open(model_path, 'rb'))
+
 
 # function to predict damage
 
@@ -44,7 +43,7 @@ def predict_damage(input_data):
     }
     """
     # dataset path
-    df = pd.read_csv("earthquake\packages\csv_building_structure.csv")
+    df = pd.read_csv("earthquake/packages/csv_building_structure.csv")
     #
     df.dropna(inplace=True)
     df_web = pd.Series(input_data)
@@ -162,6 +161,9 @@ def predict_damage(input_data):
                       'plan_configuration_U-shape']
     df_test_web = df_test_web.reindex(columns=reordered_cols)
 
+    # Load pickle model
+    forest_best = pickle.load(open(model_path, 'rb'))
+
     y_pred = forest_best.predict(df_test_web.to_numpy())
 
     predicted_output = damage_grades[y_pred[0]]
@@ -195,6 +197,10 @@ def find_house(building_id):
 
         X_normal = df.loc[df['building_id'] == building_id].drop(
             ['damage_grade', 'building_id', 'district_id', 'vdcmun_id', 'ward_id'], axis=1)
+
+        # Load pickle model
+        forest_best = pickle.load(open(model_path, 'rb'))
+
         y_pred_normal = forest_best.predict(X_normal.to_numpy())
         return damage_grades[y_pred_normal[0]]
 
@@ -202,49 +208,49 @@ def find_house(building_id):
         return'House not Found!!!'
 
 
-if __name__ == '__main__':
-    input_data = {
-        'count_floors_pre_eq': 1,
-        'count_floors_post_eq': 1,
-        'age_building': 30,
-        'plinth_area_sq_ft': 308,
-        'height_ft_pre_eq': 9,
-        'height_ft_post_eq': 9,
-        'land_surface_condition': 'Flat',
-        'position': 'Not attached',
-        'has_superstructure': ['mud_mortar_stone'],
-        'condition_post_eq': 'Damage-Repaired and used',
-        'technical_solution_proposed': 'Minor repair',
-        'foundation_type': 'Other',
-        'roof_type': 'Bamboo/Timber-Light roof',
-        'ground_floor_type': 'Mud',
-        'other_floor_type': 'Not applicable',
-        'plan_configuration': 'Rectangular'
-    }
+# if __name__ == '__main__':
+#     input_data = {
+#         'count_floors_pre_eq': 1,
+#         'count_floors_post_eq': 1,
+#         'age_building': 30,
+#         'plinth_area_sq_ft': 308,
+#         'height_ft_pre_eq': 9,
+#         'height_ft_post_eq': 9,
+#         'land_surface_condition': 'Flat',
+#         'position': 'Not attached',
+#         'has_superstructure': ['mud_mortar_stone'],
+#         'condition_post_eq': 'Damage-Repaired and used',
+#         'technical_solution_proposed': 'Minor repair',
+#         'foundation_type': 'Other',
+#         'roof_type': 'Bamboo/Timber-Light roof',
+#         'ground_floor_type': 'Mud',
+#         'other_floor_type': 'Not applicable',
+#         'plan_configuration': 'Rectangular'
+#     }
 
-    input_data1 = {
-        'count_floors_pre_eq': 2,
-        'count_floors_post_eq': 2,
-        'age_building': 25,
-        'plinth_area_sq_ft': 200,
-        'height_ft_pre_eq': 15,
-        'height_ft_post_eq': 15,
-        'land_surface_condition': 'Flat',
-        'position': 'Not attached',
-        'has_superstructure': ['mud_mortar_stone', 'timber'],
-        'condition_post_eq': 'Damage-Not used',
-        'technical_solution_proposed': 'Reconstruction',
-        'foundation_type': 'Mud mortar-Stone/Brick',
-        'roof_type': 'Bamboo/Timber-Heavy roof',
-        'ground_floor_type': 'Mud',
-        'other_floor_type': 'Timber/Bamboo-Mud',
-        'plan_configuration': 'Rectangular'
-    }
+#     input_data1 = {
+#         'count_floors_pre_eq': 2,
+#         'count_floors_post_eq': 2,
+#         'age_building': 25,
+#         'plinth_area_sq_ft': 200,
+#         'height_ft_pre_eq': 15,
+#         'height_ft_post_eq': 15,
+#         'land_surface_condition': 'Flat',
+#         'position': 'Not attached',
+#         'has_superstructure': ['mud_mortar_stone', 'timber'],
+#         'condition_post_eq': 'Damage-Not used',
+#         'technical_solution_proposed': 'Reconstruction',
+#         'foundation_type': 'Mud mortar-Stone/Brick',
+#         'roof_type': 'Bamboo/Timber-Heavy roof',
+#         'ground_floor_type': 'Mud',
+#         'other_floor_type': 'Timber/Bamboo-Mud',
+#         'plan_configuration': 'Rectangular'
+#     }
 
-    house_id = 120101000111
-    start_time = time.time()
-    print(predict_damage(input_data))
-    print(find_house(house_id))
-    end_time = time.time()
-    time_taken = end_time - start_time
-    print(f'Total Time taken: {time_taken} seconds')
+#     house_id = 120101000111
+#     start_time = time.time()
+#     print(predict_damage(input_data))
+#     print(find_house(house_id))
+#     end_time = time.time()
+#     time_taken = end_time - start_time
+#     print(f'Total Time taken: {time_taken} seconds')
