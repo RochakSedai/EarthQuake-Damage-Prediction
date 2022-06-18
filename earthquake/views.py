@@ -49,6 +49,12 @@ def normalUser_data(request):
                 'output': output,
                 'information': information[output]
             }
+        else: 
+            context = {
+                'output': 'Not Found',
+                'information': 'This may be beacause the building_id you entered was incorrect. Please try again !!!'
+            }
+
 
 
 
