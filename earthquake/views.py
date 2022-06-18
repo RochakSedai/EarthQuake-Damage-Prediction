@@ -2,8 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from matplotlib.style import context
 from .forms import *
-from earthquake.packages.predict_damage import predict_damage
-from earthquake.packages.normaluser import find_house
+# from earthquake.packages.predict_damage import predict_damage
+# from earthquake.packages.normaluser import find_house
+from earthquake.packages.predictor import predict_damage,find_house
 import time
 
 # Create your views here.
@@ -82,7 +83,7 @@ def professionalUser_data(request):
             'height_ft_post_eq' : ht_af_earthquake,  
             'land_surface_condition' : land_surface_cond,
             'position' : position,
-            'has_superstructure' : superstructure_type,
+            'has_superstructure' : list(superstructure_type),
             'condition_post_eq' : condition_post_eq,
             'technical_solution_proposed' : tech_soln_proposed,
             'foundation_type' : foundation_type,

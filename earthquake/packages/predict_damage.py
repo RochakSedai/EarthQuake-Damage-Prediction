@@ -35,9 +35,9 @@ def predict_damage(input_data):
     'plan_configuration' : 'Rectangular'    
     }
     """
-    print(input_data)
+    # print(input_data)
     input_data = deepcopy(input_data)
-    print(input_data)
+    # print(input_data)
 
     df = pd.read_csv("earthquake\packages\csv_building_structure.csv")
     
