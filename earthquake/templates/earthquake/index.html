@@ -2,92 +2,143 @@
 
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Earthquake Building Damage Prediction</title>
+        <meta content="" name="description" />
+        <meta content="" name="keywords" />
 
-  <title>Earthquake Building Damage Prediction</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+            rel="stylesheet"
+        />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <!-- Vendor CSS Files -->
+        <link
+            href="{% static 'earthquake/vendor/aos/aos.css'%}"
+            rel="stylesheet"
+        />
+        <link
+            href="{% static 'earthquake/vendor/bootstrap/css/bootstrap.min.css' %}"
+            rel="stylesheet"
+        />
+        <link
+            href="{% static 'earthquake/vendor/bootstrap-icons/bootstrap-icons.css' %}"
+            rel="stylesheet"
+        />
+        <link
+            href="{% static 'earthquake/vendor/boxicons/css/boxicons.min.css' %}"
+            rel="stylesheet"
+        />
+        <link
+            href="{% static 'earthquake/vendor/glightbox/css/glightbox.min.css' %}"
+            rel="stylesheet"
+        />
+        <link
+            href="{% static 'earthquake/vendor/remixicon/remixicon.css' %}"
+            rel="stylesheet"
+        />
+        <link
+            href="{% static 'earthquake/vendor/swiper/swiper-bundle.min.css' %}"
+            rel="stylesheet"
+        />
 
-  <!-- Vendor CSS Files -->
-  <link href="{% static 'earthquake/vendor/aos/aos.css'%}" rel="stylesheet">
-  <link href="{% static 'earthquake/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'earthquake/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-  <link href="{% static 'earthquake/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-  <link href="{% static 'earthquake/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-  <link href="{% static 'earthquake/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
-  <link href="{% static 'earthquake/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+        <!-- Template Main CSS File -->
+        <link href="{% static 'earthquake/css/style.css' %}" rel="stylesheet" />
+    </head>
 
-  <!-- Template Main CSS File -->
-  <link href="{% static 'earthquake/css/style.css' %}" rel="stylesheet">
+    <body>
+        <!-- ======= Header ======= -->
+        <header id="header" class="fixed-top">
+            <div class="container d-flex align-items-center">
+                <h1 class="logo me-auto"><a href="index.html">TEAM 404</a></h1>
+                <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-</head>
+                <nav id="navbar" class="navbar">
+                    <ul>
+                        <li>
+                            <a class="nav-link scrollto active" href="#hero"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a class="nav-link scrollto" href="#about"
+                                >About Project</a
+                            >
+                        </li>
+                        <li>
+                            <a class="nav-link scrollto" href="#team">Team</a>
+                        </li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav>
+                <!-- .navbar -->
+            </div>
+        </header>
+        <!-- End Header -->
 
-<body>
+        <!-- ======= Hero Section ======= -->
+        <section id="hero" class="d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div
+                        class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <h1>Earthquake Building Damage Prediction</h1>
+                        <h2>AI based prediction system</h2>
+                        <h2>Choose Mode</h2>
+                        <div
+                            class="d-flex justify-content-center justify-content-lg-start"
+                        >
+                            <a
+                                href="{% url 'normalUser' %}"
+                                class="btn-get-started scrollto"
+                                >Normal User</a
+                            >&nbsp;
+                            <a
+                                href="{% url 'professionalUser' %}"
+                                class="btn-get-started scrollto"
+                                >Proffesional User</a
+                            >
+                        </div>
+                    </div>
+                    <div
+                        class="col-lg-6 order-1 order-lg-2 hero-img"
+                        data-aos="zoom-in"
+                        data-aos-delay="200"
+                    >
+                        <img
+                            src="{% static 'earthquake/img/hero-img.png' %}"
+                            class="img-fluid animated"
+                            alt=""
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Hero -->
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
-    <div class="container d-flex align-items-center">
+        <main id="main">
+            <!-- ======= About Us Section ======= -->
+            <section id="about" class="about">
+                <div class="container" data-aos="fade-up">
+                    <div class="section-title">
+                        <h2>About Earthquake Building Damage Prediction</h2>
+                    </div>
 
-      <h1 class="logo me-auto"><a href="index.html">TEAM 404</a></h1>
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About Project</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-          <h1>Earthquake Building Damage Prediction</h1>
-          <h2>AI based prediction system</h2>
-          <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="{% url 'normalUser' %}" class="btn-get-started scrollto">Normal User</a>&nbsp;
-            <a href="{% url 'professionalUser' %}" class="btn-get-started scrollto">Proffesional User</a>
-          </div>
-        </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-          <img src="{% static 'earthquake/img/hero-img.png' %}" class="img-fluid animated" alt="">
-        </div>
-      </div>
-    </div>
-
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>About Earthquake Building Damage Prediction</h2>
-        </div>
-
-        <div class="row content">
-          <!-- <div class="col-lg-6"> -->
-            <p>
-              The project "Earthquake Damage Prediction" is used to predict the damage grade of buildings damaged by earthquakes. 
-              The user can give two modes of input. First, a normal user can just enter his Building ID and find what damage grade 
-              of the house is. Secondly, a professional user can input details of 16 columns to get the prediction of damaged grade.
-            </p>
-            <!-- <ul>
+                    <div class="row content">
+                        <!-- <div class="col-lg-6"> -->
+                        <p>
+                            The project "Earthquake Damage Prediction System" is a Machine learning project developed using Azure technologies like ML studio for Microsoft Virtual Hackathon 2022. This system is developed with aim to predict damage of buildings due to eathquake. Currently, our models have been trained and tested using only Nepali earthquake dataset taken from Kaggle.com <a href="https://www.kaggle.com/code/ar89dsl/predicting-building-damage-from-earthquakes/data?select=csv_building_structure.csv"> Dataset </a>. Our system can currently predict the earthquake damage grades on buildings with test f1-score of 88%. We have developed this system with two modes of input i-e normal user mode and professional user mode. Here a normal user will enter his/her building id and then get the damage grade predicted for that id. Similarly, the professional user will have to enter some more details of the building like number of floors, height of building, age etc and then get the damage grade predicted for that building. <br>
+                            <b>P.S:<i> Our system is not perfect and this is just a simple prototype for the idea we presented in this hackathon</i></b><br>
+                            You can find the github link for this project below: <br>
+                        </p>
+                        <!-- <ul>
               <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
               <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
               <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
@@ -99,122 +150,223 @@
               velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
               culpa qui officia deserunt mollit anim id est laborum.
             </p> -->
-            <a href="#" class="btn-learn-more">Github</a>
-          </div>
-        <!-- </div> -->
-
-      </div>
-    </section><!-- End About Us Section -->
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Team</h2>
-          <p>We are Computer Engineering students from Nepal and are very interested 
-            in projects involving AI or any other field of Computer Science.</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-6">
-            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
-              <div class="pic"><img src="{% static 'earthquake/img/team/team-1.jpg' %}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Anup Kafle</h4>
-                <p>Engineering Student, Passionate in Cloud Computing and Graphics Design</p>
-                <div class="social">
-                  <a href="https://twitter.com/anupkaphle24"><i class="ri-twitter-fill"></i></a>
-                  <a href="https://www.facebook.com/anupkafle24"><i class="ri-facebook-fill"></i></a>
-                  <a href="mailto:Anupkafle24@gmail.com"><i class="ri-mail-fill"></i></a>
-                  <a href="https://www.linkedin.com/in/anup-kafle-6617a3196/"> <i class="ri-linkedin-box-fill"></i> </a>
+                        <a href="https://github.com/RochakSedai/EarthQuake-Damage-Prediction" class="btn-learn-more">Earthquake Damage Prediction System Github</a>
+                    </div>
+                    <!-- </div> -->
                 </div>
-              </div>
-            </div>
-          </div>
+            </section>
+            <!-- End About Us Section -->
+            <!-- ======= Team Section ======= -->
+            <section id="team" class="team section-bg">
+                <div class="container" data-aos="fade-up">
+                    <div class="section-title">
+                        <h2>Team</h2>
+                        <p>
+                            We are Computer Engineering students from Nepal and
+                            are very interested in projects involving AI or any
+                            other field of Computer Science.
+                        </p>
+                    </div>
 
-          <div class="col-lg-6">
-            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
-              <div class="pic"><img src="{% static 'earthquake/img/team/team-2.jpg' %}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Anish Shilpakar</h4>
-                <p>Engineering Student, Machine Learning Enthusiast and Passionate Developer</p>
-                <div class="social">
-                  <a href="https://twitter.com/anish_shilpakar"><i class="ri-twitter-fill"></i></a>
-                  <a href="https://www.facebook.com/anish.shilpakar.JuJu13"><i class="ri-facebook-fill"></i></a>
-                  <a href="mailto: anishshilpakar8@gmail.com"><i class="ri-mail-fill"></i></a>
-                  <a href="https://www.linkedin.com/in/anish-shilpakar13/"> <i class="ri-linkedin-box-fill"></i> </a>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div
+                                class="member d-flex align-items-start"
+                                data-aos="zoom-in"
+                                data-aos-delay="100"
+                            >
+                                <div class="pic">
+                                    <img
+                                        src="{% static 'earthquake/img/team/team-1.jpg' %}"
+                                        class="img-fluid"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="member-info">
+                                    <h4>Anup Kafle</h4>
+                                    <p>
+                                        Engineering Student, Passionate in Cloud
+                                        Computing and Graphics Design
+                                    </p>
+                                    <div class="social">
+                                        <a
+                                            href="https://twitter.com/anupkaphle24"
+                                            ><i class="ri-twitter-fill"></i
+                                        ></a>
+                                        <a
+                                            href="https://www.facebook.com/anupkafle24"
+                                            ><i class="ri-facebook-fill"></i
+                                        ></a>
+                                        <a href="mailto:Anupkafle24@gmail.com"
+                                            ><i class="ri-mail-fill"></i
+                                        ></a>
+                                        <a
+                                            href="https://www.linkedin.com/in/anup-kafle-6617a3196/"
+                                        >
+                                            <i class="ri-linkedin-box-fill"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div
+                                class="member d-flex align-items-start"
+                                data-aos="zoom-in"
+                                data-aos-delay="200"
+                            >
+                                <div class="pic">
+                                    <img
+                                        src="{% static 'earthquake/img/team/team-2.jpg' %}"
+                                        class="img-fluid"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="member-info">
+                                    <h4>Anish Shilpakar</h4>
+                                    <p>
+                                        Engineering Student, AI Enthusiast and
+                                        Passionate Web Developer
+                                    </p>
+                                    <div class="social">
+                                        <a
+                                            href="https://twitter.com/anish_shilpakar"
+                                            ><i class="ri-twitter-fill"></i
+                                        ></a>
+                                        <a
+                                            href="https://www.facebook.com/anish.shilpakar.JuJu13"
+                                            ><i class="ri-facebook-fill"></i
+                                        ></a>
+                                        <a
+                                            href="mailto: anishshilpakar8@gmail.com"
+                                            ><i class="ri-mail-fill"></i
+                                        ></a>
+                                        <a
+                                            href="https://www.linkedin.com/in/anish-shilpakar13/"
+                                        >
+                                            <i class="ri-linkedin-box-fill"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 mt-4">
+                            <div
+                                class="member d-flex align-items-start"
+                                data-aos="zoom-in"
+                                data-aos-delay="300"
+                            >
+                                <div class="pic">
+                                    <img
+                                        src="{% static 'earthquake/img/team/team-3.jpg' %}"
+                                        class="img-fluid"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="member-info">
+                                    <h4>Anushil Timsina</h4>
+                                    <p>
+                                        Engineering Student, Passionate in
+                                        Machine Learning and Data Science
+                                    </p>
+                                    <div class="social">
+                                        <a
+                                            href="https://twitter.com/GamerPr39809367"
+                                            ><i class="ri-twitter-fill"></i
+                                        ></a>
+                                        <a
+                                            href="https://www.facebook.com/anushil.timsina.9"
+                                            ><i class="ri-facebook-fill"></i
+                                        ></a>
+                                        <a href="mailto: ianushil001@gmail.com"
+                                            ><i class="ri-mail-fill"></i
+                                        ></a>
+                                        <a
+                                            href="https://www.linkedin.com/in/anushil-timsina-2813a11b6/"
+                                        >
+                                            <i class="ri-linkedin-box-fill"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 mt-4">
+                            <div
+                                class="member d-flex align-items-start"
+                                data-aos="zoom-in"
+                                data-aos-delay="400"
+                            >
+                                <div class="pic">
+                                    <img
+                                        src="{% static 'earthquake/img/team/team-4.jpg' %}"
+                                        class="img-fluid"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="member-info">
+                                    <h4>Rochak Sedai</h4>
+                                    <p>
+                                        Engineering Student, Passionate in AI
+                                        and Full Stack Development
+                                    </p>
+                                    <div class="social">
+                                        <a
+                                            href="https://twitter.com/rochak_sedai"
+                                            ><i class="ri-twitter-fill"></i
+                                        ></a>
+                                        <a
+                                            href="https://www.facebook.com/sedairochak"
+                                            ><i class="ri-facebook-fill"></i
+                                        ></a>
+                                        <a href="mailto: rozsedai@gmail.com"
+                                            ><i class="ri-mail-fill"></i
+                                        ></a>
+                                        <a
+                                            href="https://www.linkedin.com/in/rochak-sedai-7313811b7/"
+                                        >
+                                            <i class="ri-linkedin-box-fill"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
+            </section>
+            <!-- End Team Section -->
+        </main>
+        <!-- End #main -->
 
-          <div class="col-lg-6 mt-4">
-            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
-              <div class="pic"><img src="{% static 'earthquake/img/team/team-3.jpg' %}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Anushil Timsina</h4>
-                <p>Engineering Student, Passionate in Machine Learning and Data Science</p>
-                <div class="social">
-                  <a href="https://twitter.com/GamerPr39809367"><i class="ri-twitter-fill"></i></a>
-                  <a href="https://www.facebook.com/anushil.timsina.9"><i class="ri-facebook-fill"></i></a>
-                  <a href="mailto: ianushil001@gmail.com"><i class="ri-mail-fill"></i></a>
-                  <a href="https://www.linkedin.com/in/anushil-timsina-2813a11b6/"> <i class="ri-linkedin-box-fill"></i> </a>
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="container footer-bottom clearfix">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>Team 404</span></strong
+                    >. All Rights Reserved
                 </div>
-              </div>
+                <div class="credits">Designed and Developed by Members of Team 404</div>
             </div>
-          </div>
+        </footer>
+        <!-- End Footer -->
 
-          <div class="col-lg-6 mt-4">
-            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
-              <div class="pic"><img src="{% static 'earthquake/img/team/team-4.jpg' %}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Rochak Sedai</h4>
-                <p>Engineering Student, Passionate in AI and Full Stack Development</p>
-                <div class="social">
-                  <a href="https://twitter.com/rochak_sedai"><i class="ri-twitter-fill"></i></a>
-                  <a href="https://www.facebook.com/sedairochak"><i class="ri-facebook-fill"></i></a>
-                  <a href="mailto: rozsedai@gmail.com"><i class="ri-mail-fill"></i></a>
-                  <a href="https://www.linkedin.com/in/rochak-sedai-7313811b7/"> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div id="preloader"></div>
+        <a
+            href="#"
+            class="back-to-top d-flex align-items-center justify-content-center"
+            ><i class="bi bi-arrow-up-short"></i
+        ></a>
 
-        </div>
-
-      </div>
-    </section><!-- End Team Section -->
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-
- 
-
-    <div class="container footer-bottom clearfix">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Team 404</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        Designed by Members of Team 404
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="{% static 'earthquake/vendor/aos/aos.js' %}"></script>
-  <script src="{% static 'earthquake/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'earthquake/vendor/glightbox/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'earthquake/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-  <script src="{% static 'earthquake/vendor/swiper/swiper-bundle.min.js' %}"></script>
-  <script src="{% static 'earthquake/vendor/waypoints/noframework.waypoints.js' %}"></script>
-  <!-- Template Main JS File -->
-  <script src="{% static 'earthquake/js/main.js' %}"></script>
-
-</body>
-
+        <!-- Vendor JS Files -->
+        <script src="{% static 'earthquake/vendor/aos/aos.js' %}"></script>
+        <script src="{% static 'earthquake/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'earthquake/vendor/glightbox/js/glightbox.min.js' %}"></script>
+        <script src="{% static 'earthquake/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'earthquake/vendor/swiper/swiper-bundle.min.js' %}"></script>
+        <script src="{% static 'earthquake/vendor/waypoints/noframework.waypoints.js' %}"></script>
+        <!-- Template Main JS File -->
+        <script src="{% static 'earthquake/js/main.js' %}"></script>
+    </body>
 </html>
