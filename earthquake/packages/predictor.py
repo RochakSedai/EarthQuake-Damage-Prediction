@@ -11,7 +11,7 @@ from sklearn.preprocessing import LabelEncoder
 # Global Variables
 
 # model path
-model_path = 'earthquake/packages/model_tuned.pkl'
+model_path = '/home/anish/earthquake-damage-prediction/earthquake/packages/model_tuned.pkl'
 
 
 
@@ -43,7 +43,7 @@ def predict_damage(input_data):
     }
     """
     # dataset path
-    df = pd.read_csv("earthquake/packages/csv_building_structure.csv")
+    df = pd.read_csv("/home/anish/earthquake-damage-prediction/earthquake/packages/csv_building_structure.csv")
     #
     df.dropna(inplace=True)
     df_web = pd.Series(input_data)
@@ -177,7 +177,7 @@ def find_house(building_id):
 
     '''
     # dataset path
-    df = pd.read_csv("earthquake\packages\csv_building_structure.csv")
+    df = pd.read_csv("/home/anish/earthquake-damage-prediction/earthquake/packages/csv_building_structure.csv")
     #
     df.dropna(inplace=True)
     if df.loc[df['building_id'] == building_id].shape[0] > 0:
