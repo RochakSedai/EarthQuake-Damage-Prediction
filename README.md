@@ -9,6 +9,9 @@ The project "Earthquake Damage Prediction System" is a Machine learning project 
 - After developing the model, we developed a web app using Microsoft Visual Studio Code. A Django web app with good UI was developed. 
 - Then, we created a virtual machine in Azure to deploy our web app.
 
+## Check Out Our Project Live Here:
+Live Link: [Earthquake Damage Prediction System](http://earthquaketeam404.centralus.cloudapp.azure.com:8080/)
+
 ## How to use this project locally?
 You can clone this branch and use it right now using the steps given below.  
 
